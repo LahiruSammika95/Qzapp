@@ -1,11 +1,12 @@
 import { StatusBar } from 'expo-status-bar';
 import React from 'react';
 import { StyleSheet, Text, View } from 'react-native';
-import PlayQuiz from './app/Playquiz';
+
+import ViewPods from './app/ViewPods';
 export default function App() {
   return (
     <View style={styles.container}>
-      <PlayQuiz />
+      <ViewPods />
     </View>
   );
 }
