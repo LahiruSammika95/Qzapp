@@ -106,7 +106,7 @@ export default class AnswerList extends Component {
                                     <Text style={styles.welcome}>{item.options.option2}</Text>
                                     <Text style={styles.welcome}>{item.options.option3}</Text>
                                     <Text style={styles.welcome}>{item.options.option4}</Text>
-                                    <Text style={styles.answer}>Answer is {item.correctoption.match(/\d/g).join("")}</Text>
+                                    <Text style={styles.answer}>Correct answer is {item.correctoption.match(/\d/g).join("")}</Text>
                                 </React.Fragment>
                             )}
 
