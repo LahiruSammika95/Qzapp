@@ -14,124 +14,14 @@ import Icon from 'react-native-vector-icons/Ionicons';
 import Animbutton from './animbutton'
 const { width, height } = Dimensions.get('window')
 let arrnew = []
-const jsonData = {
-    "quiz": {
 
-        "question1": {
-            "correctoption": "option3",
-            "options": {
-                "option1": "is finished",
-                "option2": "was finished",
-                "option3": "had finished",
-                "option4": "not finished"
-            },
-            "question": " He told me that he ____ watching the movie."
-        },
-        "question2": {
-            "correctoption": "option3",
-            "options": {
-                "option1": "so",
-                "option2": "very",
-                "option3": "too",
-                "option4": "more"
-            },
-            "question": " I do my work _____ carefully not to make mistakes."
-        },
-        "question3": {
-            "correctoption": "option1",
-            "options": {
-                "option1": "because of",
-                "option2": "because off",
-                "option3": "on",
-                "option4": "for"
-            },
-
-            "question": "He got too tired _____ over work."
-        },
-        "question4": {
-            "correctoption": "option3",
-            "options": {
-                "option1": "muteble",
-                "option2": "imutable",
-                "option3": "variable",
-                "option4": "none of the above"
-            },
-            "question": "Find the word with correct spelings"
-        },
-        "question5": {
-            "correctoption": "option1",
-            "options": {
-                "option1": "modern",
-                "option2": "old",
-                "option3": "regular",
-                "option4": "ancient"
-            },
-            "question": "Select the similar word for 'new'"
-        },
-        "question6": {
-            "correctoption": "option3",
-            "options": {
-                "option1": " Greedy",
-                "option2": "Very Hungry",
-                "option3": "Assuaged",
-                "option4": "None of these"
-            },
-
-            "question": "Antonym of Ravenous ?"
-        },
-        "question7": {
-            "correctoption": "option2",
-            "options": {
-                "option1": "sitting",
-                "option2": " has been sitting",
-                "option3": "has been sit",
-                "option4": "has sit"
-            },
-
-            "question": "She ____ in the sun for 1 hour."
-        },
-        "question8": {
-            "correctoption": "option2",
-            "options": {
-                "option1": "Symphonious",
-                "option2": "Homophonous",
-                "option3": "Synonyms",
-                "option4": "Saminymous"
-            },
-            "question": " Sounding the same but spelt differently ?"
-        },
-        "question9": {
-            "correctoption": "option1",
-            "options": {
-                "option1": "My friend has got a new job.",
-                "option2": "My friend has got a new work.",
-                "option3": "My friend is got a new job.",
-                "option4": "My friend did got a new job."
-            },
-
-            "question": "Choose the correct answer ?"
-        },
-        "question10": {
-            "correctoption": "option2",
-            "options": {
-                "option1": " Do you like a glass of water ?",
-                "option2": "Would you like a glass of water ?",
-                "option3": "Would you like the glass of water ?",
-                "option4": "Do you like the glass of water ?"
-            },
-
-            "question": "Choose the correct sentence."
-        },
-    }
-
-}
 export default class Quiz extends Component {
     constructor(props) {
         super(props);
         this.qno = 0
         this.score = 0
 
-        const jdata = jsonData.quiz
+        const jdata = props.jdata
         arrnew = Object.keys(jdata).map(function (k) { return jdata[k] });
         this.state = {
             question: arrnew[this.qno].question,
@@ -147,7 +37,7 @@ export default class Quiz extends Component {
     prev() {
         if (this.qno > 0) {
             this.qno--
-            this.setState({ question: arrnew[this.qno].question, options: arrnew[this.qno].options, correctoption: arrnew[this.qno].correctoption })
+            this.setState({ active: 0, countCheck: 0, question: arrnew[this.qno].question, options: arrnew[this.qno].options, correctoption: arrnew[this.qno].correctoption })
         }
     }
     next() {

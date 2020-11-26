@@ -14,6 +14,6 @@ export default function QuizFunc(props) {
 
     }
     return (
-        <Quiz set={() => _onPress()} quizFinish={(score) => _quizFinish(score)} {...props} />
+        <Quiz set={() => _onPress()} quizFinish={(score) => _quizFinish(score)} {...props} jdata={props.jdata} />
     );
 }
